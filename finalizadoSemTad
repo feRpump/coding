@@ -61,17 +61,8 @@ public class DataFinal {
                 System.err.println("\nOpção inválida\n"); 
                 
             
-        }}  
-                
-        
-        
-        
-        
-        
-        
-       
-   
-  
+        }
+        }  
     }
     
 }
