@@ -1,5 +1,10 @@
 // main Calendario.java
 
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package calendario;
 
 
@@ -17,24 +22,151 @@ public class Calendario {
     public static void main(String[] args) {
         funcionamento f1 = new funcionamento();
         funcionamento f0 = new funcionamento();
+        int diaatual, mesatual, diamais, anoatual, mesinicial, anodiv;
+        Scanner sc = new Scanner (System.in);
         
-        //f0.pedirInfo();
-        f0.teste();
+        System.out.println("Entre com o dia, o mes e o ano atual.");
+        diaatual = sc.nextInt();
+        mesinicial = sc.nextInt();
+        anoatual = sc.nextInt();
         
-         /*f1.aumentadia(diaatual, mesatual);
-        
-        
-        
-        
-        
-        
+        System.out.println("Qual a operaçao desejada? \n "
+                    + "Acrescentar dias - 1 \n"
+                    + "Acrescentar meses - 2 \n"
+                    + "Acrescentar anos - 3 \n"
+                + "Fechar o programa - 0");
+        int op = sc.nextInt();
+   
+            if (op == 1){
+                 System.out.println("Quantos dias voce quer acrescentar?");
+            diamais = sc.nextInt();
+            int diasoma = diamais + diaatual;//diasoma está somando os dias que o usuario quer somar a data inicial.
+            if (diaatual == 0 ){
+                    diaatual++;
+                }
+            
+            mesatual = mesinicial;
+            
+            int diadiv = diasoma / 30;
+            int contdiv = diadiv;//se diadiv for maior que 30, então temos 1 mês inteiro.
+            anodiv = diasoma / 360;
+            if (anodiv > 0) {
+                anoatual = anoatual + anodiv;
+            }
+            
+            
+                
+                //System.out.println("anodiv " +anodiv);
+            if (diadiv <12) {
+                mesatual = mesinicial + diadiv;
+                //mesatual = mesatual - mesinicial;
+                
+            }
+                
+                if (diasoma > 30 ) {
+                diaatual = diasoma - (30 * diadiv);
+                if (diaatual == 0 ){
+                    diaatual++;
+                }
+                
+            }
                 
                 
-        
+                if (contdiv > 0) {
+                    
+                contdiv = contdiv - mesatual;
+                
+                    
+                    if (diaatual == 0 ){
+                    diaatual++;
+                }
+                    System.out.println("Contdiv e mesatual" +contdiv+ "\n" +mesatual);
+                switch (mesatual) {
+                    case 1:
                         
-        
-        
-            //if (op == 1){
+                        System.out.println("\nData: "+diaatual+" de Janeiro de "  +anoatual);
+                        break;
+                    case 2:
+                        
+                        System.out.println("\nData: "+diaatual+" de Fevereiro de " +anoatual);
+                        break;
+                    case 3:
+                        System.out.println("\nData: "+diaatual+" de Março de "  +anoatual);
+                        break;
+                    case 4:
+                        System.out.println("\nData: "+diaatual+" de Abril de " +anoatual);
+                        break;
+                    case 5:
+                        System.out.println("\nData: "+diaatual+" de Maio de "  +anoatual);
+                        break;
+                    case 6:
+                        System.out.println("\nData: "+diaatual+" de Junho de  "  +anoatual);
+                        break;
+                    case 7:
+                        System.out.println("\nData: "+diaatual+" de Julho de "  +anoatual);
+                        break;
+                    case 8:
+                        System.out.println("\nData: "+diaatual+" de Agosto de  "  +anoatual);
+                        break;
+                    case 9:
+                        System.out.println("\nData: "+diaatual+" de Setembro de "  +anoatual);
+                        break;
+                    case 10:
+                        System.out.println("\nData: "+diaatual+" de Outubro de "  +anoatual);
+                        break;
+                    case 11:
+                        System.out.println("\nData: "+diaatual+" de Novembro de "  +anoatual);
+                        break;
+                    case 12:
+                        System.out.println("\nData: "+diaatual+" de Dezembro de "  +anoatual);
+                        break;
+                    default: System.out.println("\nMês inválido");
+                        break;
+                        
+                }
+                }      else if (contdiv >= 12){
+                    int novomes = mesatual - diadiv;
+                    System.out.println("mesatual" +novomes);
+                    switch (novomes) {
+                    case 1:
+                        System.out.println("Data: "+diaatual+" de Janeiro de "  +anoatual);
+                        break;
+                    case 2:
+                        System.out.println("Data: "+diaatual+" de Fevereiro de " +anoatual);
+                        break;
+                    case 3:
+                        System.out.println("Data: "+diaatual+" de Março de "  +anoatual);
+                        break;
+                    case 4:
+                        System.out.println("Data: "+diaatual+" de Abril de " +anoatual);
+                        break;
+                    case 5:
+                        System.out.println("Data: "+diaatual+" de Maio de "  +anoatual);
+                        break;
+                    case 6:
+                        System.out.println("Data: "+diaatual+" de Junho de  "  +anoatual);
+                        break;
+                    case 7:
+                        System.out.println("Data: "+diaatual+" de Julho de "  +anoatual);
+                        break;
+                    case 8:
+                        System.out.println("Data: "+diaatual+" de Agosto de  "  +anoatual);
+                        break;
+                    case 9:
+                        System.out.println("Data: "+diaatual+" de Setembro de "  +anoatual);
+                        break;
+                    case 10:
+                        System.out.println("Data: "+diaatual+" de Outubro de "  +anoatual);
+                        break;
+                    case 11:
+                        System.out.println("Data: "+diaatual+" de Novembro de "  +anoatual);
+                        break;
+                    case 12:
+                        System.out.println("Data: "+diaatual+" de Dezembro de "  +anoatual);
+                        break;
+                    default: System.out.println("Mês inválido");
+                        break;
+                }
             
                
                 
@@ -42,7 +174,7 @@ public class Calendario {
              
     
             //            }
-            if (op == 2) {
+            /*if (op == 2) {
                 System.out.println("Quantos meses você quer adicionar :");
                 mesmais = sc.nextInt();
                 mesatual = mesinicial;
@@ -64,4 +196,8 @@ public class Calendario {
                
         
     }
-}
+}}}
+    
+
+
+
