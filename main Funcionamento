@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class Funcionamento {
+
+	public static void main(String[] args) {
+		int op=1;
+
+		 Scanner sc = new Scanner(System.in);
+		CalendarioTeste c1 = new CalendarioTeste();
+		
+		System.out.println("Qual o dia atual?");
+		  int dia = sc.nextInt();
+		  c1.dia     = 		dia;
+    
+		  System.out.println("Qual o mês atual?");		  
+		  int mes = sc.nextInt();
+		  c1.mes   =		 mes;
+        
+		  System.out.println("Qual o ano atual? ");
+		  int  ano = sc.nextInt();
+		  c1.ano 	= 		ano;	
+		  
+		  while (op != 0){ 
+			 System.out.println(
+	                   "\n1- Adicionar dias\n"
+	                + "2- Adicionar meses\n"
+	                + "3- Adicionar anos\n"
+	                + "0 - Fechar o programa\n"
+	                + "Escolha a opção:	");
+		 	op = sc.nextInt();
+		 	c1.opcao(op);       
+		 	c1.imprimirAtributos();
+		 	
+		  } 	
+	}
+}
