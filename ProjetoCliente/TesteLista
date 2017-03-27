@@ -5,7 +5,8 @@ public class TesteLista {
 	public static void main(String[] args) {
 		Elemento lst = Elemento.Criar();
 		Cliente c1 = new Cliente("Fernando", "91-980736246", "27-03-2017");
-		lst = Elemento.inserirOrdenado(lst, Cliente); // Como vou colocar os valores da classe cliente ?
+		lst = Elemento.inserirOrdenado(lst, c1);
+		lst = Elemento.imprimirAlfabetico(lst); // ainda não está imprimindo alfabético, só to testando...
 	}
 
 }
