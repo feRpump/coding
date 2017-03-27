@@ -1,0 +1,32 @@
+package Dados;
+
+public class Cliente {
+	private String nome;
+	private String telefone;
+	private String data;
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public String getTelefone() {
+		return telefone;
+	}
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+	public String getData() {
+		return data;
+	}
+	public void setData(String data) {
+		this.data = data;
+	}
+	
+	public Cliente(String nome, String telefone, String data){
+		this.data = data;
+		this.telefone = telefone;
+		this.nome = nome;
+	}
+	
+}
