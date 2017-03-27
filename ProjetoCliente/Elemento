@@ -1,0 +1,47 @@
+package Dados;
+
+
+
+public class Elemento {
+	Cliente info;
+	Elemento proximo;
+	
+	public static Elemento Criar(){
+		return null;
+	}
+	
+	public static Elemento inserirOrdenado(Elemento lst, Cliente info){
+		
+		Elemento novo;
+		Elemento a = null;
+		Elemento p = lst;
+		
+		int comp = p.info.getNome().compareTo(info.getNome());
+		while (p != null && (comp < 0)){
+			a = p;
+			p = p.proximo;
+		}
+		
+		novo = new Elemento();
+		novo.info = info;
+		if (a==null){
+			novo.proximo = lst;
+			lst = novo;
+		} else {
+			novo.proximo = a.proximo;
+			a.proximo = novo;
+		}
+		return lst;
+	}
+	public static boolean eVazia(Elemento lst){
+		return (lst == null);
+	}
+	
+	public static void imprimirAlfabetico(Elemento lst ){
+		if (!Elemento.eVazia(lst)){
+			System.out.println(lst);
+			
+			Elemento.imprimirAlfabetico(lst.proximo);
+		}
+	}
+}
